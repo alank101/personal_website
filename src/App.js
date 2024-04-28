@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import { default as AboutMe } from './components/AboutMe';
+import { default as HomePage } from './components/HomePage';
+import { default as Music } from './components/Music';
+import { default as Development } from './components/Development';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path='AboutMe' element={<AboutMe />} />
+        <Route path="/Music" element={<Music />} />
+        <Route path='/Development' element={<Development />} />
+      </Routes>
     </div>
   );
 }
